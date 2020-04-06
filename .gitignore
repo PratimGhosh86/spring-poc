@@ -1,3 +1,9 @@
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+
+# Created by https://www.gitignore.io/api/java,java-web
+# Edit at https://www.gitignore.io/?templates=java,java-web
+
+### Java ###
 # Compiled class file
 *.class
 
@@ -21,3 +27,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+### Java-Web ###
+## ignoring target file
+target/
+
+# End of https://www.gitignore.io/api/java,java-web
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+
