@@ -11,12 +11,14 @@ import org.fissore.slf4j.FluentLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor(onConstructor_ = {@Autowired})
 @SpringBootApplication
+@EnableEurekaServer
 public class Initializer {
 
   private final FluentLogger log = getLogger(Initializer.class);
