@@ -1,0 +1,26 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    non-secure-port-enabled: false
+    secure-port: ${server.port}
+    secure-port-enabled: true
+
+server:
+  port: 8761
+  ssl:
+    key-alias: localhost
+    key-store: classpath:keystore-rsa.jks
+    key-store-password: localhost
+    key-store-type: JKS
+
+spring:
+  application:
+    name: app-discovery
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  profiles:
+    active: dev

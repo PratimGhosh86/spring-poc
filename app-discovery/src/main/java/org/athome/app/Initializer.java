@@ -32,12 +32,12 @@ public class Initializer {
   }
 
   @EventListener(ApplicationReadyEvent.class)
-  public void startApp() {
+  public void ready() {
     log.info().log("Application is ready to serve requests");
     log.warn().log("Active profiles: {}", of(env.getActiveProfiles()).collect(joining(",")));
   }
 
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
     run(Initializer.class, args);
   }
 
