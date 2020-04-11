@@ -19,6 +19,7 @@
 
   <properties>
     <java.version>11</java.version>
+    <karate.version>0.9.5</karate.version>
     <slf4j-fluent.version>0.13.3</slf4j-fluent.version>
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
   </properties>
@@ -84,6 +85,18 @@
           <artifactId>junit-vintage-engine</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.intuit.karate</groupId>
+      <artifactId>karate-apache</artifactId>
+      <version>${karate.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.intuit.karate</groupId>
+      <artifactId>karate-junit5</artifactId>
+      <version>${karate.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
