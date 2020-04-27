@@ -1,6 +1,14 @@
-HELP.md
+!HELP.md
+
+### Maven ###
 target/
 !.mvn/wrapper/maven-wrapper.jar
+
+### GRADLE ###
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
 !**/src/main/**
 !**/src/test/**
 
@@ -18,6 +26,7 @@ target/
 *.iws
 *.iml
 *.ipr
+out/
 
 ### NetBeans ###
 /nbproject/private/
@@ -26,3 +35,6 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
+
+### VS Code ###
+!.vscode/
