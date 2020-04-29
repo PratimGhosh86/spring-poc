@@ -10,6 +10,10 @@ eureka:
     secure-port: ${server.port}
     secure-port-enabled: true
 
+logging:
+  level:
+    org.springframework.web: DEBUG
+
 ribbon:
   eureka:
     enabled: true

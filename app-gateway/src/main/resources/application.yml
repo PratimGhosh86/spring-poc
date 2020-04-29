@@ -33,3 +33,4 @@ zuul:
       path: /api/**
       service-id: APP-API
       strip-prefix: true
+      sensitive-headers:

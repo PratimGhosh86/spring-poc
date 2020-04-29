@@ -1,0 +1,6 @@
+
+http --verify=no -v https://localhost:8760/api/v1/ns/welcome
+
+http --verify=no -v POST https://localhost:8760/api/v1/ns/authenticate id=1 pass=1
+
+http --verify=no -v POST https://localhost:8760/api/v1/sec/verify 'Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzb3VyY2UiOiJhcGkiLCJpYXQiOjE1ODgwOTg2MDAsImV4cCI6MTU4ODE4NTAwMH0.-4KYft6Z13EEy0y5w_W444bpw8uphFRIn8gkHHDTv3Y'
