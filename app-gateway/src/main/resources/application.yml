@@ -32,3 +32,4 @@ zuul:
   routes:    api:
       path: /api/**
       service-id: APP-API
+      strip-prefix: true

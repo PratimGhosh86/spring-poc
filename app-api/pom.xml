@@ -19,9 +19,11 @@
 
   <properties>
     <java.version>11</java.version>
+    <jjwt.version>0.11.1</jjwt.version>
     <karate.version>0.9.5</karate.version>
     <slf4j-fluent.version>0.13.3</slf4j-fluent.version>
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+    <springdoc-openapi-ui.version>1.3.6</springdoc-openapi-ui.version>
   </properties>
 
   <dependencyManagement>
@@ -56,6 +58,26 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
+      </dependency> -->
+    <!-- JWT -->
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-api</artifactId>
+      <version>${jjwt.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-impl</artifactId>
+      <version>${jjwt.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-jackson</artifactId>
+      <version>${jjwt.version}</version>
+      <scope>runtime</scope>
+    </dependency>
     <!-- logging -->
     <dependency>
       <groupId>org.fissore</groupId>
@@ -74,6 +96,8 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-test</artifactId> 
+      <scope>test</scope> </dependency> -->
     <dependency>
       <groupId>com.intuit.karate</groupId>
       <artifactId>karate-apache</artifactId>
@@ -86,6 +110,14 @@
       <version>${karate.version}</version>
       <scope>test</scope>
     </dependency>
+    <!-- openapi -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>${springdoc-openapi-ui.version}</version>
+    </dependency>
+    <!-- <dependency> <groupId>org.springdoc</groupId> <artifactId>springdoc-openapi-security</artifactId> 
+      <version>${springdoc-openapi-ui.version}</version> </dependency> -->
     <!-- Optional -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

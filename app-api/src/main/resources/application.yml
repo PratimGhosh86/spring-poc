@@ -27,3 +27,6 @@ spring:
     name: app-api
   profiles:
     active: dev
+
+jwt:
+  key: FB8D6591183B4AEA3E6975BBDFBD52FB99DD2E4BF565B634A1168C488E
