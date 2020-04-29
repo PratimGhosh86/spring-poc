@@ -11,14 +11,16 @@ import org.fissore.slf4j.FluentLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor(onConstructor_ = {@Autowired})
 @SpringBootApplication
-@EnableEurekaServer
+@EnableEurekaClient
+@EnableZuulProxy
 public class Initializer {
 
   private final FluentLogger log = getLogger(Initializer.class);
@@ -33,7 +35,7 @@ public class Initializer {
 
   @EventListener(ApplicationReadyEvent.class)
   public void ready() {
-    log.info().log("Discovery is ready to register applications");
+    log.info().log("Gateway is ready to forward requests");
     log.warn().log("Active profiles: {}", of(env.getActiveProfiles()).collect(joining(",")));
   }
 

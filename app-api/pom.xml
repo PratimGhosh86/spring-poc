@@ -12,10 +12,10 @@
   </parent>
 
   <groupId>org.athome.app</groupId>
-  <artifactId>app-discovery</artifactId>
+  <artifactId>app-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>app-discovery</name>
-  <description>Discovery application</description>
+  <name>app-api</name>
+  <description>Gateway application</description>
 
   <properties>
     <java.version>11</java.version>
@@ -50,12 +50,11 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
-    <!-- caching -->
     <dependency>
-      <groupId>com.github.ben-manes.caffeine</groupId>
-      <artifactId>caffeine</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <!-- logging -->
     <dependency>

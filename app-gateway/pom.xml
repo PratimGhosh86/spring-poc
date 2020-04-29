@@ -12,14 +12,13 @@
   </parent>
 
   <groupId>org.athome.app</groupId>
-  <artifactId>app-discovery</artifactId>
+  <artifactId>app-gateway</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>app-discovery</name>
-  <description>Discovery application</description>
+  <name>app-gateway</name>
+  <description>Gateway application</description>
 
   <properties>
     <java.version>11</java.version>
-    <karate.version>0.9.5</karate.version>
     <slf4j-fluent.version>0.13.3</slf4j-fluent.version>
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
   </properties>
@@ -50,7 +49,11 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
     </dependency>
     <!-- caching -->
     <dependency>
@@ -74,18 +77,6 @@
           <artifactId>junit-vintage-engine</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.intuit.karate</groupId>
-      <artifactId>karate-apache</artifactId>
-      <version>${karate.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.intuit.karate</groupId>
-      <artifactId>karate-junit5</artifactId>
-      <version>${karate.version}</version>
-      <scope>test</scope>
     </dependency>
     <!-- Optional -->
     <dependency>

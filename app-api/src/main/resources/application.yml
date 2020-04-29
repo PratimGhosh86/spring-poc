@@ -1,9 +1,8 @@
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
-      defaultZone: https://localhost:8761
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:      defaultZone: ${EUREKA_URI:https://localhost:8761/eureka}
   instance:
     hostname: localhost
     non-secure-port-enabled: false
@@ -11,8 +10,12 @@ eureka:
     secure-port: ${server.port}
     secure-port-enabled: true
 
+ribbon:
+  eureka:
+    enabled: true
+
 server:
-  port: 8761
+  port: 8770
   ssl:
     key-alias: localhost
     key-store: classpath:keystore-rsa.jks
@@ -21,6 +24,6 @@ server:
 
 spring:
   application:
-    name: app-discovery
+    name: app-api
   profiles:
     active: dev
