@@ -25,7 +25,7 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
 
   private final FluentLogger log = getLogger(JwtAuthenticationFilter.class);
 
-  private String key;
+  private final String key;
 
   public JwtAuthenticationFilter(final AuthenticationManager auth, final String key) {
     super(auth);
@@ -33,8 +33,8 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
   }
 
   @Override
-  protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res,
-      FilterChain chain) throws IOException, ServletException {
+  protected void doFilterInternal(final HttpServletRequest req, final HttpServletResponse res,
+      final FilterChain chain) throws IOException, ServletException {
     log.info().log("Validating Auth token");
     final String authHeader =
         Optional.ofNullable(req.getHeader("Authorization")).orElse(StringUtils.EMPTY);
@@ -51,9 +51,10 @@ public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
         Optional.ofNullable(jws.getBody().get("source")).orElse(StringUtils.EMPTY).toString();
     if (!"api".equals(source))
       throw new JwtException("Invalid token");
-    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-        Optional.ofNullable(jws.getBody().get("id")).orElse(StringUtils.EMPTY).toString(), source,
-        Arrays.asList(new SimpleGrantedAuthority("SELFSIGNED")));
+    final UsernamePasswordAuthenticationToken authentication =
+        new UsernamePasswordAuthenticationToken(
+            Optional.ofNullable(jws.getBody().get("id")).orElse(StringUtils.EMPTY).toString(),
+            source, Arrays.asList(new SimpleGrantedAuthority("SELFSIGNED")));
     SecurityContextHolder.getContext().setAuthentication(authentication);
     log.info().log("Security context built, continuing");
     chain.doFilter(req, res);

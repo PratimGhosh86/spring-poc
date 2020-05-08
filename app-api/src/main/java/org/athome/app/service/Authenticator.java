@@ -45,6 +45,11 @@ public class Authenticator {
     return Token.builder().jwt(token).expiry(expiry).build();
   }
 
+  public Boolean validateToken(final String token) {
+    log.info().log("Token: {}", token);
+    return Boolean.TRUE;
+  }
+
   public String validateToken(final Authentication auth, final String token) {
     log.info().log("Token: {}", token);
     log.info().log("Authorities: {}",
