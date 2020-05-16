@@ -15,6 +15,7 @@ ribbon:
 
 server:
   port: 8760
+  shutdown: graceful
   ssl:
     key-alias: localhost
     key-store: classpath:keystore-rsa.jks

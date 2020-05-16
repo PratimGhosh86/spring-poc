@@ -13,6 +13,7 @@ eureka:
 
 server:
   port: 8761
+  shutdown: graceful
   ssl:
     key-alias: localhost
     key-store: classpath:keystore-rsa.jks
