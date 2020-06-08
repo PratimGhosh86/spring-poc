@@ -1,6 +1,7 @@
 package org.athome.app;
 
 import static org.fissore.slf4j.FluentLoggerFactory.getLogger;
+
 import java.util.Arrays;
 import org.athome.app.jwt.JwtAuthenticationFilter;
 import org.athome.app.jwt.JwtPostAuthenticationFilter;

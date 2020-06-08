@@ -1,5 +1,8 @@
 spring:
   profiles:
     active: test
+  cloud:
+    discovery:
+      enabled: false
   application:
     name: app-api-test

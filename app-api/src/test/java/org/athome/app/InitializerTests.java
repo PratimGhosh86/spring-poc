@@ -3,6 +3,7 @@ package org.athome.app;
 import static java.lang.Boolean.TRUE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.fissore.slf4j.FluentLoggerFactory.getLogger;
+
 import org.fissore.slf4j.FluentLogger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

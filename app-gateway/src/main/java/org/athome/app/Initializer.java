@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Stream.of;
 import static org.fissore.slf4j.FluentLoggerFactory.getLogger;
 import static org.springframework.boot.SpringApplication.run;
+
 import java.util.Locale;
 import javax.annotation.PostConstruct;
 import org.fissore.slf4j.FluentLogger;
