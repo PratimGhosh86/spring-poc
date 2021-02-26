@@ -1,11 +1,8 @@
 package org.athome.app;
 
-import static org.fissore.slf4j.FluentLoggerFactory.getLogger;
-
 import java.util.Arrays;
 import org.athome.app.jwt.JwtAuthenticationFilter;
 import org.athome.app.jwt.JwtPostAuthenticationFilter;
-import org.fissore.slf4j.FluentLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,14 +15,14 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import lombok.CustomLog;
 import lombok.RequiredArgsConstructor;
 
+@CustomLog
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Configuration
 @EnableWebSecurity
 public class Security extends WebSecurityConfigurerAdapter {
-
-  private final FluentLogger log = getLogger(Security.class);
 
   private final Environment env;
   private final JwtPostAuthenticationFilter jwtPostAuthenticationFilter;
@@ -56,11 +53,11 @@ public class Security extends WebSecurityConfigurerAdapter {
 
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
-    final CorsConfiguration corsConfig = new CorsConfiguration().applyPermitDefaultValues();
+    final var corsConfig = new CorsConfiguration().applyPermitDefaultValues();
     corsConfig.setAllowCredentials(Boolean.TRUE);
     corsConfig.setAllowedMethods(
         Arrays.asList("GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE"));
-    final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    final var source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", corsConfig);
     return source;
   }

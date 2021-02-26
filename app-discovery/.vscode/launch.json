@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Initializer<app-discovery>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "org.athome.app.Initializer",
+      "projectName": "app-discovery",
+      "vmArgs": "-Djavax.net.ssl.trustStore=C:\\Users\\Pratim\\Certs\\truststore-rsa.jks -Djavax.net.ssl.trustStorePassword=localhost -Djavax.net.ssl.keyStore=C:\\Users\\Pratim\\Certs\\keystore-rsa.jks -Djavax.net.ssl.keyStorePassword=localhost"
+    }
+  ]
+}

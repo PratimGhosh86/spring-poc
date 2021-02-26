@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import lombok.CustomLog;
 import lombok.RequiredArgsConstructor;
 
-
+@CustomLog
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RestController
 @RequestMapping("/v1/sec")
@@ -24,6 +25,7 @@ public class Secure {
   public String verify(
       @RequestHeader(name = "Authorization", defaultValue = EMPTY) final String token,
       final Authentication auth) {
+    log.info().log("Validating token for user {}", auth.getName());
     return authenticator.validateToken(auth, token);
   }
 
