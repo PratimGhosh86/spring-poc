@@ -37,7 +37,7 @@ public class Security extends WebSecurityConfigurerAdapter {
         .addFilterAfter(jwtPostAuthenticationFilter, JwtAuthenticationFilter.class);
     // allow localhost access from different ports
     http.cors();
-    // disable form login and csrf
+    // disable form login and CSRF
     http.formLogin().disable();
     http.csrf().disable();
     // disable session

@@ -4,15 +4,21 @@
       "path": "app-api"
     },
     {
+      "path": "app-api-node"
+    },
+    {
       "path": "app-discovery"
     },
     {
       "path": "app-gateway"
+    },
+    {
+      "path": "app-sidecar"
     }
   ],
   "settings": {
     "java.checkstyle.configuration": "/google_checks.xml",
-    "java.checkstyle.version": "8.27",
+    "java.checkstyle.version": "8.41",
     "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
   }
 }

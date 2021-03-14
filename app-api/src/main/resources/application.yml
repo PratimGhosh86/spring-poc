@@ -1,15 +1,15 @@
 eureka:
   client:
-    fetch-registry: true
+    fetch-registry: false
     register-with-eureka: true
     service-url:
-      defaultZone: ${EUREKA_URI:https://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     hostname: localhost
-    non-secure-port-enabled: false
-    prefer-ip-address: false
-    secure-port: ${server.port}
-    secure-port-enabled: true
+    # non-secure-port-enabled: false
+    prefer-ip-address: true
+    # secure-port: ${server.port}
+    # secure-port-enabled: true
 
 logging:
   level:
@@ -22,11 +22,11 @@ ribbon:
 server:
   port: 8770
   shutdown: graceful
-  ssl:
-    key-alias: localhost
-    key-store: classpath:keystore-rsa.jks
-    key-store-password: localhost
-    key-store-type: JKS
+  # ssl:
+  #   key-alias: localhost
+  #   key-store: classpath:keystore-rsa.jks
+  #   key-store-password: localhost
+  #   key-store-type: JKS
 
 spring:
   application:

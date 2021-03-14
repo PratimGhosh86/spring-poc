@@ -2,7 +2,7 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Spring Boot-Initializer<app-discovery>",
+      "name": "app-discovery",
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "console": "internalConsole",

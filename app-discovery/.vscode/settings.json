@@ -1,6 +1,5 @@
 {
   "java.checkstyle.configuration": "/google_checks.xml",
-  "java.checkstyle.version": "8.27",
-  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  "codewindProfiling.showProfiling": false
+  "java.checkstyle.version": "8.41",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
 }

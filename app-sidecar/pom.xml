@@ -10,18 +10,16 @@
   </parent>
 
   <groupId>org.athome.app</groupId>
-  <artifactId>app-api</artifactId>
+  <artifactId>app-sidecar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>app-api</name>
-  <description>Gateway application</description>
+  <name>app-sidecar</name>
+  <description>Sidecar application</description>
 
   <properties>
     <java.version>11</java.version>
-    <jjwt.version>0.11.2</jjwt.version>
     <karate.version>0.9.6</karate.version>
     <slf4j-fluent.version>0.13.3</slf4j-fluent.version>
     <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
-    <springdoc-openapi-ui.version>1.5.5</springdoc-openapi-ui.version>
   </properties>
 
   <dependencyManagement>
@@ -50,38 +48,17 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
+      <artifactId>spring-cloud-netflix-sidecar</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-properties-migrator</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <!-- JWT -->
+    <!-- caching -->
     <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt-api</artifactId>
-      <version>${jjwt.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt-impl</artifactId>
-      <version>${jjwt.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.jsonwebtoken</groupId>
-      <artifactId>jjwt-jackson</artifactId>
-      <version>${jjwt.version}</version>
-      <scope>runtime</scope>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
     </dependency>
     <!-- logging -->
     <dependency>
@@ -102,11 +79,6 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.intuit.karate</groupId>
       <artifactId>karate-apache</artifactId>
       <version>${karate.version}</version>
@@ -117,17 +89,6 @@
       <artifactId>karate-junit5</artifactId>
       <version>${karate.version}</version>
       <scope>test</scope>
-    </dependency>
-    <!-- openapi -->
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-ui</artifactId>
-      <version>${springdoc-openapi-ui.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-security</artifactId>
-      <version>${springdoc-openapi-ui.version}</version>
     </dependency>
     <!-- Optional -->
     <dependency>

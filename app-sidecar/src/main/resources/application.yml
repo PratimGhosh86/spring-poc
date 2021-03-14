@@ -1,0 +1,40 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    # non-secure-port-enabled: true
+    prefer-ip-address: true
+    # secure-port: ${server.port}
+    # secure-port-enabled: false
+
+sidecar:
+  accept-all-ssl-certificates: true
+  hostname: localhost
+  # port should be passed from command line (eg java -jar ... --sidecar.port=5432 ...)
+  port: 9000
+  # health-uri the service uri returning health data in the form of { "status": "UP" } or
+  # http://localhost:${sidecar.port}/${health-uri:health.json} if the service provides such endpoint.
+  health-uri: http://localhost:${sidecar.port:9000}/health
+  # Sidecar controller
+  home-page-uri: http://${sidecar.hostname}:${sidecar.port}/info
+
+server:
+  port: 8771
+  shutdown: graceful
+  # ssl:
+  #   key-alias: localhost
+  #   key-store: classpath:keystore-rsa.jks
+  #   key-store-password: localhost
+  #   key-store-type: JKS
+
+spring:
+  application:
+    name: app-api-node-sidecar
+  profiles:
+    active: dev

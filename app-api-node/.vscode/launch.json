@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "app-api-node",
+      "cwd": "${workspaceFolder}",
+      "program": "main.js"
+    }
+  ]
+}
